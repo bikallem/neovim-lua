@@ -45,9 +45,6 @@ return packer.startup(function(use)
   -- Add you plugins here:
   use 'wbthomason/packer.nvim' -- packer can manage itself
 
-  -- File explorer
-  use 'kyazdani42/nvim-tree.lua'
-
   -- Indent line
   use 'lukas-reineke/indent-blankline.nvim'
 
@@ -58,12 +55,6 @@ return packer.startup(function(use)
       require('nvim-autopairs').setup{}
     end
   }
-
-  -- Icons
-  use 'kyazdani42/nvim-web-devicons'
-
-  -- Tag viewer
-  use 'preservim/tagbar'
 
   -- Treesitter interface
   use 'nvim-treesitter/nvim-treesitter'
@@ -88,12 +79,6 @@ return packer.startup(function(use)
     },
   }
 
-  -- Statusline
-  use {
-    'feline-nvim/feline.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
-  }
-
   -- git labels
   use {
     'lewis6991/gitsigns.nvim',
@@ -103,11 +88,9 @@ return packer.startup(function(use)
     end
   }
 
-  -- Dashboard (start screen)
-  use {
-    'goolord/alpha-nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
-  }
+  use 'sbdchd/neoformat'
+
+  use 'sychen52/smart-term-esc.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

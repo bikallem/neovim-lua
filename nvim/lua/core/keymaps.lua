@@ -3,15 +3,16 @@
 -----------------------------------------------------------
 
 local function map(mode, lhs, rhs, opts)
-  local options = { noremap = true, silent = true }
+  local options = { noremap = true }
   if opts then
     options = vim.tbl_extend('force', options, opts)
   end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+  vim.keymap.set(mode, lhs, rhs, options)
 end
 
 -- Change leader to a comma
 vim.g.mapleader = ','
+vim.g.maplocalleader = ','
 
 -----------------------------------------------------------
 -- Neovim shortcuts
@@ -53,6 +54,9 @@ map('i', '<leader>s', '<C-c>:w<CR>')
 -- Close all windows and exit from Neovim with <leader> and q
 map('n', '<leader>q', ':qa!<CR>')
 
+-- map <Shift>: to ;
+map('n', ';', ':')
+
 -----------------------------------------------------------
 -- Applications and Plugins shortcuts
 -----------------------------------------------------------
@@ -68,3 +72,4 @@ map('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
 
 -- Tagbar
 map('n', '<leader>z', ':TagbarToggle<CR>')          -- open/close
+
